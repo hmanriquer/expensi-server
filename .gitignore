@@ -1,3 +1,9 @@
 /node_modules
+/.vscode
+/.idea
+/drizzle
 
+# Environment variables
 .env
+.env.local
+
