@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "build": "tsc",
+    "dev": "cross-env NODE_ENV=development tsx ./src/index.ts",
     "test": "cross-env NODE_ENV=test vitest",
     "test:ui": "cross-env NODE_ENV=test vitest --ui",
     "test:coverage": "cross-env NODE_ENV=test vitest run --coverage",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "db:generate": "drizzle-kit generate",
+    "db:seed": "drizzle-kit seed",
+    "db:migrate": "drizzle-kit migrate"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +25,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",
+    "drizzle-seed": "^0.3.1",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
     "http-status": "^2.1.0",

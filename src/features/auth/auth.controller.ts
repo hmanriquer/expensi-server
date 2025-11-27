@@ -15,6 +15,7 @@ const signToken = (id: number) => {
 
 export const register = catchAsync(async (req: Request, res: Response) => {
   const { name, email, password, pin } = req.body;
+  console.log('Registering user...');
 
   const existingUser = await db
     .select()
