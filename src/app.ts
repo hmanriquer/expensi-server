@@ -6,6 +6,8 @@ import incomesRouter from './features/incomes/incomes.routes';
 import expensesRouter from './features/expenses/expenses.routes';
 import { errorHandler } from './middlewares/error-handler';
 import httpStatus from 'http-status';
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec from './config/swagger';
 
 const app = express();
 
@@ -13,6 +15,9 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+
+// Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Routes
 app.use('/api/v1/auth', authRouter);
